@@ -1,5 +1,6 @@
 # ysh
-##基于擦除的阅读理解可解释性分析
+## 基于擦除的阅读理解可解释性分析
+
 1、使用jieba分词对句子进行分词（去除标点），得到一个ner_list，遍历ner_list中的每个词语，擦除变成[MASK]，计算模型输出得到的end_logits/ start_logits和不加擦除的原句输出得到的end_logits/ start_logits之间的均方误差值作为loss，同样的词若出现多次，则取多次的MSE平均值作为最终的loss。
 ```
 举例:
